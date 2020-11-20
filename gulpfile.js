@@ -1,7 +1,7 @@
 const gulp = require("gulp");
 const plumber = require("gulp-plumber");
 const sourcemap = require("gulp-sourcemaps");
-const less = require("gulp-less");
+const sass = require("gulp-sass");
 const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 const sync = require("browser-sync").create();
@@ -38,7 +38,7 @@ const copy = () => {
 
 // styles
 const styles = () => {
-  return gulp.src("source/less/style.less")
+  return gulp.src("source/sass/style.scss")
     .pipe(plumber())
     .pipe(sourcemap.init())
     .pipe(less())
